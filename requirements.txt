@@ -1,4 +1,3 @@
 google.generativeai
 streamlit
-text_extractor
-PdfReader
+pypdf
