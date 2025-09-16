@@ -10,7 +10,8 @@ model = genai.GenerativeModel('gemini-2.5-flash-lite')
 resume_text = job_desc = None
 
 # upload resume 
-st.sidebar.title(":orange[Upload your resume (pdf only)]")
+st.sidebar.image("https://cdn-icons-png.flaticon.com/512/3135/3135755.png", width=100)
+st.sidebar.markdown(":orange[Upload your **resume below** (pdf only)]")
 
 file = st.sidebar.file_uploader('Resume', type=['pdf'])
 if file:
@@ -18,7 +19,8 @@ if file:
         # st.write(resume_text)
         
 # let define the main page 
-st.title(":orange[Skill Match] :blue[AI Assistant skill matching tool]")
+st.title(":orange[Skill Match] AI Assistant skill matching tool")
+st.caption("Your personal AI career coach — helping you land more interviews 🎯")
 st.markdown("#### This application will match your resume and the job description . It will create a detailed report on the match")
 tips = ''' Follow these steps to proceed:
 1. Upload your resume (pdf only).
@@ -28,7 +30,7 @@ tips = ''' Follow these steps to proceed:
 
 st.write(tips)
 
-job_desc=st.text_area("Copy and Paste the Job Description here (press ctrl+enter to run)",max_chars=10000)
+job_desc=st.text_area("Copy and Paste the Job Description here (press ctrl+enter to run)",max_chars=10000,height=200)
 
 prompt=f'''
 Assume you are expert in skill matching and creating profiles.
